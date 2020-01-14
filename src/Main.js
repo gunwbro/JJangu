@@ -1,20 +1,26 @@
 import React from "react";
 import App from "./App";
+import Board from "./Board";
 
 class Title extends React.Component {
   render() {
     return (
       <div className="Title">
-        <h1>My Blog</h1>
+        <h1>짱구 게임</h1>
         <App />
-        <h2>소희야 사랑해♥</h2>
+
       </div>
     );
   }
 }
 class Main extends React.Component {
   render() {
-    return <Title />;
+    return (
+      <div>
+        <Title />
+        <Board />
+      </div>
+    );
   }
 }
 
