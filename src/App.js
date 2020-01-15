@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import styled from "styled-components";
 
 class Clock extends React.Component {
   constructor(props) {
@@ -27,9 +27,9 @@ class Clock extends React.Component {
 
   render() {
     return (
-      <div className="Clock">
+      <StyledClock>
         <span>{this.state.date.toLocaleTimeString()}</span>
-      </div>
+      </StyledClock>
     );
   }
 }
@@ -38,5 +38,15 @@ class App extends React.Component {
     return <Clock />;
   }
 }
+
+const StyledClock = styled.div`
+  position: absolute;
+  color: #333333;
+  font-size: 150%;
+  top: 130px;
+  text-align: center;
+  font-weight: bolder;
+  width: 100%;
+`;
 
 export default App;

@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 function Puzzle(props) {
   return (
-    <StyledPuzzle onClick={props.onClick} clicked={props.clicked}>
-      {props.clicked ? "1" : "0"}
+    <StyledPuzzle onClick={props.onClick} value={props.value}>
+      {props.value ? "1" : "0"}
     </StyledPuzzle>
   );
 }
@@ -14,20 +14,22 @@ class Board extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      clicked: false
+      puzzles: Array(12).fill(false)
     };
   }
   handleClick(i) {
+    let puzzles = this.state.puzzles;
+    puzzles[i] = !puzzles[i];
     this.setState({
-      clicked: !this.state.clicked
+      puzzles: puzzles
     });
   }
   renderPuzzle(i) {
+    const currentValue = this.state.puzzles[i];
     return (
       <Puzzle
-        number={i}
         onClick={() => this.handleClick(i)}
-        clicked={this.state.clicked}
+        value={currentValue}
       />
     );
   }
@@ -56,8 +58,10 @@ class Board extends React.Component {
 }
 
 const StyledPuzzle = styled.div`
-  background-color: ${props => (props.clicked ? 'red' : 'blue')};
+  background-color: ${props => (props.value ? '#313C52' : '#2B4872')};
   color: white;
+  border-radius: 8%;
+  text-align: center
 `;
 const Wrap = styled.div`
   position: absolute;
