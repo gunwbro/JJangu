@@ -43,7 +43,7 @@ const StyledClock = styled.div`
   position: absolute;
   color: #333333;
   font-size: 150%;
-  top: 130px;
+  top: 230px;
   text-align: center;
   font-weight: bolder;
   width: 100%;

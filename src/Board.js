@@ -36,6 +36,7 @@ class Board extends React.Component {
   render() {
     return (
       <Wrap>
+        <BackButton onClick={this.props.onClick}>홈으로</BackButton>
         <StyledBoard>
           {this.renderPuzzle(0)}
           {this.renderPuzzle(1)}
@@ -65,15 +66,31 @@ const StyledPuzzle = styled.div`
 `;
 const Wrap = styled.div`
   position: absolute;
-  top: 200px;
+  top: 100px;
   width: 100%;
 `;
 const StyledBoard = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  width: 500px;
+  grid-auto-rows: minmax(120px, auto);
+  width: 700px;
   margin: 0 auto;
+`;
+
+const BackButton = styled.div`
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  width: 120px;
+  height: 20px;
+  padding: 15px;
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  margin-left: -60px;
+  margin-top: -10px;
+  top: -70px;
+  font-size: 140%;
 `;
 export default Board;
