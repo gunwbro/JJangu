@@ -2,6 +2,7 @@ import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import App from "./App";
 import Board from "./Board";
+import Background from './maxresdefault.jpg';
 
 class Title extends React.Component {
   render() {
@@ -63,8 +64,9 @@ const StyledH1 = styled.h1`
 
 const GlobalStyle = createGlobalStyle`
   body {
-  background-color: #D6D7D9;
-  user-select: none;
+  background-image : url(${Background});
+  background-repeat : no-repeat;
+  background-size : cover;
   }
 `;
 

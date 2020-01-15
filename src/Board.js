@@ -61,7 +61,6 @@ class Board extends React.Component {
 const StyledPuzzle = styled.div`
   background-color: ${props => (props.value ? '#313C52' : '#2B4872')};
   color: white;
-  border-radius: 8%;
   text-align: center
 `;
 const Wrap = styled.div`
