@@ -2,13 +2,13 @@ import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import App from "./App";
 import Board from "./Board";
-import Background from './maxresdefault.jpg';
+import Background from './wallpaper.jpg';
 
 class Title extends React.Component {
   render() {
     return (
       <div className="Title">
-        <StyledH1>짱구 게임</StyledH1>
+        <StyledH1>짱구의 카드게임</StyledH1>
         <App />
       </div>
     );
@@ -57,7 +57,7 @@ const StyledH1 = styled.h1`
   position: absolute;
   width: 100%;
   text-align: center;
-  color: #333333;
+  color: #24292E;
   font-size: 400%;
   top: 80px;
 `;
@@ -67,6 +67,8 @@ const GlobalStyle = createGlobalStyle`
   background-image : url(${Background});
   background-repeat : no-repeat;
   background-size : cover;
+  overflow-x: hidden;
+  user-select: none;
   }
 `;
 
@@ -80,8 +82,11 @@ const StyledButton = styled.div`
   padding: 15px;
   position:absolute;
   left:50%;
-  top:330px;
+  top:420px;
   margin-left:-75px;
   margin-top:-20px;
+  opacity: 0.9;
+  font-size: 170%;
+  border-radius: 10%;
 `;
 export default Main;
