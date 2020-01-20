@@ -6,18 +6,17 @@ function Puzzle(props) {
     <StyledPuzzle onClick={props.onClick} value={props.value}>
       <div>
         {/* <div>{props.value ? "1" : "0"}</div> */}
-        <div>{props.number}</div>
+        <div>{props.value ? props.number : null}</div>
       </div>
     </StyledPuzzle>
   );
 }
-
 class Board extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      puzzles: Array(12).fill(false),
+      puzzles: Array(12).fill(true),
       number: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
       clicked: 0,
       clickedPuzzle: Array(0).fill(null)
@@ -26,6 +25,12 @@ class Board extends React.Component {
   componentDidMount() {
     this.setState({
       number: this.randomArrayGenerate()
+    });
+    setTimeout(() => this.initializing(), 1000);
+  }
+  initializing() {
+    this.setState({
+      puzzles: Array(12).fill(false)
     });
   }
   handleClick(i) {
@@ -53,18 +58,21 @@ class Board extends React.Component {
           clickedPuzzle: Array(0).fill(null)
         });
         return;
+      } else if (clicked === 2) {
+        setTimeout(() => this.rollback(i), 300);
       }
-      setTimeout(() => this.rollback(i), 1000);
     }
   }
   rollback(i) {
     let puzzles = this.state.puzzles;
     let clickedPuzzle = this.state.clickedPuzzle;
+    puzzles[clickedPuzzle[0]] = false;
+    puzzles[clickedPuzzle[1]] = false;
     clickedPuzzle.pop();
-    puzzles[i] = !puzzles[i];
+    clickedPuzzle.pop();
     this.setState({
       puzzles: puzzles,
-      clicked: this.state.clicked - 1,
+      clicked: 0,
       clickedPuzzle: clickedPuzzle
     });
   }
