@@ -24,10 +24,11 @@ class Board extends React.Component {
     };
   }
   componentDidMount() {
+    const changeTime = 1000;
     this.setState({
       number: this.randomArrayGenerate()
     });
-    setTimeout(() => this.initializing(), 1000);
+    setTimeout(() => this.initializing(), changeTime);
   }
   initializing() {
     this.setState({
