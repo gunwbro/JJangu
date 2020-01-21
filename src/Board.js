@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import Puzzles0 from './JJanguPuzzle/0.jpg';
+import Puzzles1 from './JJanguPuzzle/1.jpg';
+import Puzzles2 from './JJanguPuzzle/2.jpg';
+import Puzzles3 from './JJanguPuzzle/3.jpg';
+import Puzzles4 from './JJanguPuzzle/4.jpg';
+import Puzzles5 from './JJanguPuzzle/5.jpg';
 
 function Puzzle(props) {
   return (
-    <StyledPuzzle onClick={props.onClick} value={props.value}>
-      <div>
-        {/* <div>{props.value ? "1" : "0"}</div> */}
-        <div>{props.value ? props.number : null}</div>
-      </div>
-    </StyledPuzzle>
+    <StyledPuzzle onClick={props.onClick} value={props.value} number={props.number} />
   );
 }
 class Board extends React.Component {
@@ -152,6 +153,21 @@ class Board extends React.Component {
 
 const StyledPuzzle = styled.div`
   background-color: ${props => (props.value ? "#313C52" : "#2B4872")};
+  background-image: url(${props => props.value ?
+      props.number === 0 || props.number === 1
+        ? Puzzles0
+        : props.number === 2 || props.number === 3
+        ? Puzzles1
+        : props.number === 4 || props.number === 5
+        ? Puzzles2
+        : props.number === 6 || props.number === 7
+        ? Puzzles3
+        : props.number === 8 || props.number === 9
+        ? Puzzles4
+        : props.number === 10 || props.number === 11
+        ? Puzzles5 : null : null});
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   text-align: center;
 `;
