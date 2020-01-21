@@ -20,7 +20,8 @@ class Board extends React.Component {
       puzzles: Array(12).fill(true),
       number: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
       clicked: 0,
-      clickedPuzzle: Array(0).fill(null)
+      clickedPuzzle: Array(0).fill(null),
+      sameCard: 0
     };
   }
   componentDidMount() {
@@ -57,8 +58,11 @@ class Board extends React.Component {
         this.setState({
           puzzles: puzzles,
           clicked: 0,
-          clickedPuzzle: Array(0).fill(null)
+          clickedPuzzle: Array(0).fill(null),
+          sameCard: this.state.sameCard + 1
         });
+        console.log(this.state.sameCard);
+        if (this.state.sameCard === 5) alert("사랑해 소희야♥");
         return;
       } else if (clicked === 2) {
         setTimeout(() => this.rollback(i), 300);
