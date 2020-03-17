@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/JJangu/static/js/main.cc63e37f.chunk.js",
-    "main.js.map": "/JJangu/static/js/main.cc63e37f.chunk.js.map",
+    "main.js": "/JJangu/static/js/main.25b76674.chunk.js",
+    "main.js.map": "/JJangu/static/js/main.25b76674.chunk.js.map",
     "runtime-main.js": "/JJangu/static/js/runtime-main.4bcbde31.js",
     "runtime-main.js.map": "/JJangu/static/js/runtime-main.4bcbde31.js.map",
     "static/js/2.60b25be2.chunk.js": "/JJangu/static/js/2.60b25be2.chunk.js",
     "static/js/2.60b25be2.chunk.js.map": "/JJangu/static/js/2.60b25be2.chunk.js.map",
     "index.html": "/JJangu/index.html",
-    "precache-manifest.08d99bf610c7a2e1cc676e05b41b5ca9.js": "/JJangu/precache-manifest.08d99bf610c7a2e1cc676e05b41b5ca9.js",
+    "precache-manifest.e21af55d506d003e21ef3f2f12c98de3.js": "/JJangu/precache-manifest.e21af55d506d003e21ef3f2f12c98de3.js",
     "service-worker.js": "/JJangu/service-worker.js",
     "static/js/2.60b25be2.chunk.js.LICENSE": "/JJangu/static/js/2.60b25be2.chunk.js.LICENSE",
     "static/media/0.jpg": "/JJangu/static/media/0.63c77284.jpg",
@@ -23,6 +23,6 @@
   "entrypoints": [
     "static/js/runtime-main.4bcbde31.js",
     "static/js/2.60b25be2.chunk.js",
-    "static/js/main.cc63e37f.chunk.js"
+    "static/js/main.25b76674.chunk.js"
   ]
 }
